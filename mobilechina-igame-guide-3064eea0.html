@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>站点说明 – 爱游戏 · 移动内容平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce9d7 0%, #f9dbb7 45%, #f5cd9e 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem 3rem;
+      line-height: 1.7;
+      color: #2e241e;
+    }
+
+    .page-card {
+      max-width: 820px;
+      width: 100%;
+      background: #fffcf7;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px -12px rgba(120, 70, 30, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 2.6rem 2.8rem;
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.2rem 0.8rem; }
+      .page-card { padding: 1.8rem 1.4rem; border-radius: 28px; }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3d281b;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7a5f4a;
+      border-left: 5px solid #dba978;
+      padding-left: 1rem;
+      margin: 0.8rem 0 2rem 0;
+      font-weight: 380;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem 1rem;
+      font-size: 0.85rem;
+      color: #9a7b63;
+      border-bottom: 1px dashed #ead6c4;
+      padding-bottom: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.3rem;
+      text-align: justify;
+    }
+
+    .highlight-block {
+      background: #f8efe6;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+      margin: 1.8rem 0 2rem;
+      border-left: 6px solid #c89362;
+      font-style: normal;
+    }
+
+    .highlight-block strong {
+      color: #4b2e1d;
+    }
+
+    .link-button {
+      display: inline-block;
+      background: #e6ccb4;
+      color: #3d281b;
+      text-decoration: none;
+      font-weight: 520;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .link-button:hover {
+      background: #dab794;
+      box-shadow: 0 3px 8px rgba(140, 90, 50, 0.15);
+    }
+
+    .inline-link {
+      color: #975f35;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .inline-link:hover {
+      color: #6a3e21;
+      text-decoration-color: #a5642e;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 1.6rem;
+      margin: 2rem 0 1.6rem;
+    }
+
+    @media (max-width: 540px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-item {
+      background: #f8f2eb;
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      box-shadow: inset 0 1px 3px rgba(255,245,235,0.8);
+    }
+
+    .feature-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #3d281b;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #4d3828;
+    }
+
+    .quote-note {
+      background: #fff4e8;
+      border-radius: 18px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0 2rem;
+      font-size: 0.98rem;
+      box-shadow: 0 2px 6px rgba(180, 130, 80, 0.06);
+      border: 1px solid #f0ddcb;
+      color: #3f2c1c;
+    }
+
+    .faq-summary {
+      background: #fcf5ed;
+      border-radius: 24px;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0 0.8rem;
+    }
+
+    .faq-summary details {
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-summary summary {
+      font-weight: 520;
+      cursor: pointer;
+      color: #4b3322;
+      padding: 0.3rem 0;
+    }
+
+    .faq-summary summary::-webkit-details-marker {
+      color: #b27c53;
+    }
+
+    .faq-summary p {
+      margin: 0.5rem 0 0.4rem 1.2rem;
+      font-size: 0.94rem;
+      color: #5d4230;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: #856a54;
+      border-top: 1px solid #eddccd;
+      padding-top: 1.2rem;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7d3c0;
+      margin: 1.8rem 0 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page-card">
+
+  <h1>关于这个站点</h1>
+  <div class="subhead">一份认真整理的介绍 · 移动内容与乐趣的汇集地</div>
+
+  <div class="article-meta">
+    <span>📌 站点说明 · 可信视角</span>
+    <span>最近更新 · 2025</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>
+      当你第一次来到 <a href="https://mobilechina-igame.com" class="inline-link">爱游戏</a> 这个页面时，可能想知道它究竟是什么、是否可靠。这里不绕弯子：它是一个围绕移动端游戏与应用内容展开的信息型站点，主要面向对手机娱乐、轻量游戏和互动体验感兴趣的浏览者。
+    </p>
+
+    <p>
+      站内内容涵盖游戏推荐、玩法介绍、版本动态以及一些实用的小指南，不涉及充值入口或强制下载。整体氛围更像一份经过整理的游戏阅读笔记，而非商业推广页面。如果你喜欢探索值得试玩的移动内容，这里或许能带来一些平静的发现。
+    </p>
+
+    <div class="highlight-block">
+      <strong>📖 一篇引语</strong><br>
+      “在信息繁杂的移动生态里，一个认真梳理、不带过度包装的站点，本身就是一种可信的信号。”<br>
+      <span style="opacity:0.7;">—— 站点笔记 · 关于出发点</span>
+    </div>
+
+    <p>
+      从内容结构来看，<a href="https://mobilechina-igame.com" class="inline-link">爱游戏</a> 并没有采用常见的“热门排行”或“高分榜单”套路，而是以更偏向编辑手记的方式组织文章。每篇内容都会注明参考来源或更新日期，避免模糊不清的表述。这种风格适合那些希望快速了解某款游戏特点、又不想被营销话术干扰的人。
+    </p>
+  </div>
+
+  <!-- 特点卡片网格 -->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>📋 编辑式整理</h3>
+      <p>文章带有明确的介绍角度，不是单纯堆砌参数，会说明游戏适合哪类玩家。</p>
+    </div>
+    <div class="feature-item">
+      <h3>🔍 可追溯信息</h3>
+      <p>每篇内容尽可能标注版本号或参考时间，方便你判断时效。</p>
+    </div>
+    <div class="feature-item">
+      <h3>📱 移动优先</h3>
+      <p>所有页面针对手机浏览做了版式适配，阅读体验顺畅。</p>
+    </div>
+    <div class="feature-item">
+      <h3>🧪 不搞诱导</h3>
+      <p>没有弹窗广告、虚假下载按钮或夸大宣传，保持界面干净。</p>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>
+      如果你平时用手机玩游戏，但厌倦了应用商店里千篇一律的推荐语，不妨把 <a href="https://mobilechina-igame.com" class="inline-link">爱游戏</a> 当作一个安静的内容角落。这里不会催促你“立刻下载”，也不会用浮夸的标语吸引点击，只是把游戏的特点、手感、适合场景写清楚。
+    </p>
+
+    <div class="quote-note">
+      🔔 一个提醒：任何站点都无法保证所有内容永远符合每个人的口味，但清晰的信息来源和克制的表述，至少能帮你节省筛选的时间。<br>
+      <span style="display:inline-block; margin-top:0.4rem;">—— 这也是我们持续整理的理由。</span>
+    </div>
+
+    <p>
+      对于第一次访问的朋友，可以从首页的几篇近期文章开始浏览，感受一下行文风格与信息密度是否对味。站内没有会员体系，没有积分任务，就是一个纯粹的、围绕移动游戏的内容站点。如果你认同这种“少打扰、多信息”的阅读体验，可以把它加入书签，偶尔回来看看。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <details>
+      <summary>❓ 这个站点有官方背景吗？</summary>
+      <p>没有。它是一个独立维护的内容站点，不属于任何游戏公司或渠道，内容基于公开信息与编辑体验整理。</p>
+    </details>
+    <details>
+      <summary>❓ 内容多久更新一次？</summary>
+      <p>不定期更新，通常与移动游戏版本变动、新游上线或实用技巧相关。更新频率大约每月数篇。</p>
+    </details>
+    <details>
+      <summary>❓ 是否可信？如何判断？</summary>
+      <p>站内内容均标注参考信息，不虚构数据，不隐藏利益关系。建议对照游戏官方资料或商店页面交叉验证。</p>
+    </details>
+  </div>
+
+  <hr>
+
+  <div style="text-align:center; margin: 0.2rem 0 0.4rem;">
+    <a href="https://mobilechina-igame.com" class="link-button">爱游戏</a>
+    <span style="color:#7f6048; font-size:0.9rem; margin-left: 0.6rem;">· 移动内容平台</span>
+  </div>
+
+  <div class="footer-note">
+    页面内容基于站点实际观察整理 · 仅供了解参考
+  </div>
+
+</div>
+</body>
+</html>
